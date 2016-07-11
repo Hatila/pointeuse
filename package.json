@@ -1,0 +1,18 @@
+{
+  "name": "ptut",
+  "version": "0.0.1",
+  "dependencies": {
+    "ejs": "2.4.1",
+    "express": "4.13.4",
+    "body-parser": "1.9.2",
+    "request": "2.70.0",
+    "moment": "2.13.0",
+    "nodemailer": "2.4.2"
+  },
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
