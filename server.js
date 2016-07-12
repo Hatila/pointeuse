@@ -8,19 +8,19 @@ nconf.argv()
     .env()
     .file({file: __dirname + "/config.json"});
 
-var connection = mysql.createConnection({
-    host     : nconf.get('database:host'),
-    user     : nconf.get('database:login'),
-    password : nconf.get('database:password'),
-    database : nconf.get('database:database')
-});
-
-connection.query('SELECT * from account', function(err, rows, fields) {
-    if (err) throw err;
-
-        console.log('The solution is: ',  rows.length);
-
-});
+// var connection = mysql.createConnection({
+//     host     : nconf.get('database:host'),
+//     user     : nconf.get('database:login'),
+//     password : nconf.get('database:password'),
+//     database : nconf.get('database:database')
+// });
+//
+// connection.query('SELECT * from account', function(err, rows, fields) {
+//     if (err) throw err;
+//
+//         console.log('The solution is: ',  rows.length);
+//
+// });
 
 var app = express();
 var jsonParser = bodyParser.json();
@@ -34,13 +34,13 @@ var sess;
 
 
 app.get('/', function(req, res) {
-    sess = req.session;
-    if(sess.id){
-        res.redirect('/pannel');
-    }else {
-        res.render('index.ejs', {moment : moment});
-    }
-
+    // sess = req.session;
+    // if(sess.id){
+    //     res.redirect('/pannel');
+    // }else {
+    //     res.render('index.ejs', {moment : moment});
+    // }
+    res.render('index.ejs', {moment : moment});
 
 });
 
